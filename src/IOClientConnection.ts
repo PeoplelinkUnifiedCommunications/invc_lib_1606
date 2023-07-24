@@ -118,7 +118,7 @@ export class IOClientConnection extends BaseConnection {
 			this.emit('connect');
 		});
 
-		this.socket.once('disconnect', (reason) => {
+		this.socket.on('disconnect', (reason) => {
 			logger.debug('socket disconnected');
 
 			if (reason === 'io server disconnect')
